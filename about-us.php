@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<script language="JavaScript">
+    $(document).ready(function(){
+
+        $("#tabs li").click(function() {
+
+            $("div#media-body div").remove();
+            var department= $(this).attr("id");
+
+            $.getJSON('officer.php',{department:department}, function(data) {
+                $.each(data, function(key,value) {
+                    $("div#media-body").append("<div class='col-sm-4 media testimonial-inner'>"+
+                        "<div class='pull-left'>"+
+                        "<img class='img-responsive img-circle' src='images/officer/"+value.officer_image+".png'>"+
+                        "</div>"+
+                        "<div class='media-body'>"+
+                        "<p>"+value.officer_name+"</p>"+
+                        "<span><strong>ตำแหน่ง</strong>"+value.officer_pos+"</span>"+
+                        "</div>"+
+                        "</div>");
+
+                });
+            });
+            //alert(department);
+        });
+    });
+</script>
+<P></P>
+<section id="about-us">
+<div class="container">
+<div class="center wow fadeInDown">
+    <h2>นี้คือพวกเรา</h2>
+    <span class="lead">เป็นให้บริการด้านสุขภาพ  สำหรับชุมชน  ประจำอำเภอทุ่งศรีอุดม  จังหวัดอุบลราชธานี</span>
+</div>
+
+<!-- about us slider -->
+<div id="about-slider">
+    <div id="carousel-slider" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
+        <ol class="carousel-indicators visible-xs">
+            <li data-target="#carousel-slider" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-slider" data-slide-to="1"></li>
+            <li data-target="#carousel-slider" data-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="item active">
+                <img src="images/slider_one.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slider_two.jpg" class="img-responsive" alt="">
+            </div>
+            <div class="item">
+                <img src="images/slider_one.jpg" class="img-responsive" alt="">
+            </div>
+        </div>
+
+        <a class="left carousel-control hidden-xs" href="#carousel-slider" data-slide="prev">
+            <i class="fa fa-angle-left"></i>
+        </a>
+
+        <a class=" right carousel-control hidden-xs"href="#carousel-slider" data-slide="next">
+            <i class="fa fa-angle-right"></i>
+        </a>
+    </div> <!--/#carousel-slider-->
+</div><!--/#about-slider-->
+
+
+<!-- Our Skill -->
+<div class="skill-wrap clearfix">
+
+    <div class="center wow fadeInDown">
+        <h2>ความชำนาญของเรา</h2>
+        <p class="lead">ดูแล  ส่งเสริมป้องกัน  และรักษาโรค  สำหรับประชาชนในเขต  และนอกเขตบริการอย่างเสมอภาพ</p>
+    </div>
+
+    <div class="row">
+
+        <div class="col-sm-3">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="joomla-skill">
+                    <p><em>85%</em></p>
+                    <p>ส่งเสริม</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="600ms">
+                <div class="html-skill">
+                    <p><em>95%</em></p>
+                    <p>ป้องกัน</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="900ms">
+                <div class="css-skill">
+                    <p><em>80%</em></p>
+                    <p>รักษา</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-3">
+            <div class="sinlge-skill wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="1200ms">
+                <div class="wp-skill">
+                    <p><em>90%</em></p>
+                    <p>ติดตาม</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div><!--/.our-skill-->
+
+
+<!-- our-team -->
+<div class="team">
+    <div class="center wow fadeInDown">
+        <h2>ทีมงานของเรา</h2>
+        <p class="lead">เรามีหน้าให้คอยให้บริการทั้งหมด 120  ท่าน</p>
+    </div>
+
+    <div class="row clearfix">
+        <div class="col-md-4 col-sm-6">
+            <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="media">
+                    <div class="pull-left">
+                        <a href="#"><img class="media-object" src="images/director.jpg" alt=""></a>
+                    </div>
+                    <div class="media-body">
+                        <h4>แพทย์หญิงปรมาภรณ์  ทองนุ่ม</h4>
+                        <h5>ผู้อำนวยการ</h5>
+                        <!--<ul class="tag clearfix">
+                            <li class="btn"><a href="#">Web</a></li>
+                            <li class="btn"><a href="#">Ui</a></li>
+                            <li class="btn"><a href="#">Ux</a></li>
+                            <li class="btn"><a href="#">Photoshop</a></li>
+                        </ul>-->
+
+                        <ul class="social_icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    <p>แพทย์อายุรกรรมทั่วไป</p>
+                </div><!--/.media -->
+
+            </div>
+        </div><!--/.col-lg-4 -->
+
+
+        <div class="col-md-4 col-sm-6 col-md-offset-2">
+            <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms" data-wow-delay="300ms">
+                <div class="media">
+                    <div class="pull-left">
+                        <a href="#"><img class="media-object" src="images/manager.jpg" alt=""></a>
+                    </div>
+                    <div class="media-body">
+                        <h4>นางสาวจีระนันท์  นาคำ</h4>
+                        <h5>หัวหน้าบริหาร</h5>
+                        <!--<ul class="tag clearfix">
+                            <li class="btn"><a href="#">Web</a></li>
+                            <li class="btn"><a href="#">Ui</a></li>
+                            <li class="btn"><a href="#">Ux</a></li>
+                            <li class="btn"><a href="#">Photoshop</a></li>
+                        </ul>-->
+                        <ul class="social_icons">
+                            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                        </ul>
+                    </div>
+                    <p>นักจัดการงานชำนาญการ</p>
+                </div><!--/.media -->
+
+            </div>
+        </div><!--/.col-lg-4 -->
+    </div> <!--/.row -->
+    <div class="row team-bar">
+        <div class="first-one-arrow hidden-xs">
+            <hr>
+        </div>
+        <div class="first-arrow hidden-xs">
+            <hr> <i class="fa fa-angle-up"></i>
+        </div>
+        <div class="second-arrow hidden-xs">
+            <hr> <i class="fa fa-angle-down"></i>
+        </div>
+        <div class="third-arrow hidden-xs">
+            <hr> <i class="fa fa-angle-up"></i>
+        </div>
+        <div class="fourth-arrow hidden-xs">
+            <hr> <i class="fa fa-angle-down"></i>
+        </div>
+    </div> <!--skill_border-->
+
+    <section id="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 wow fadeInDown">
+                    <h2>กลุ่มงานต่าง ๆ </h2>
+                    <div class="tab-wrap">
+                        <div class="media">
+                            <div class="parrent pull-left">
+                                <ul id="tabs" class="nav nav-tabs nav-stacked">
+                                    <li id="02" class="active"><a href="#tab1" data-toggle="tab" class="analistic-01">องค์กรแพทย์</a></li>
+                                    <li id="03" class=""><a href="#tab1" data-toggle="tab" class="analistic-02">กลุ่มการพยาบาล</a></li>
+                                    <li id="11" class=""><a href="#tab1" data-toggle="tab" class="tehnical">งานทันตกรรม</a></li>
+                                    <li id="01" class=""><a href="#tab1" data-toggle="tab" class="tehnical">บริหารงานทั่วไป</a></li>
+                                    <li id="04" class=""><a href="#tab1" data-toggle="tab" class="tehnical">เทคนิคการแพย์</a></li>
+                                    <li id="05" class=""><a href="#tab1" data-toggle="tab" class="tehnical">เภสัชกรรม</a></li>
+                                    <li id="06" class=""><a href="#tab1" data-toggle="tab" class="tehnical">เวชปฏิบัติชุมชน</a></li>
+                                    <li id="07" class=""><a href="#tab1" data-toggle="tab" class="tehnical">กายภาพ</a></li>
+                                    <li id="08" class=""><a href="#tab1" data-toggle="tab" class="tehnical">แพทย์แผนไทย</a></li>
+                                    <li id="09" class=""><a href="#tab1" data-toggle="tab" class="tehnical">งานซักฟอก</a></li>
+                                    <li id="10" class=""><a href="#tab1" data-toggle="tab" class="tehnical">งานโรงครัว</a></li>
+                                </ul>
+                            </div>
+
+                            <div class="parrent media-body">
+                                <div class="tab-content">
+                                    <div class="tab-pane fade" id="tab1">
+                                        <div class="media">
+
+                                            <div id="media-body" class="media-body">
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+                                </div> <!--/.tab-content-->
+                            </div> <!--/.media-body-->
+                        </div> <!--/.media-->
+                    </div><!--/.tab-wrap-->
+                </div><!--/.col-sm-6-->
+
+
+
+            </div><!--/.row-->
+        </div><!--/.container-->
+    </section><!--/#content-->
+</div><!--section-->
+</div><!--/.container-->
+</section><!--/about-us-->
+
+
+</body>
+</html>
